@@ -1,0 +1,48 @@
+node-yn (4.0.0-2) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+    + node-yn: Add Multi-Arch: foreign.
+
+  [ Yadd ]
+  * Bump debhelper compatibility level to 13
+  * Modernize debian/watch
+  * Fix GitHub tags regex
+  * Use dh-sequence-nodejs
+  * Update standards version to 4.6.0, no changes needed.
+
+ -- Yadd <yadd@debian.org>  Tue, 12 Oct 2021 10:15:10 +0200
+
+node-yn (4.0.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.5.0
+  * Bump debhelper compatibility level to 12
+  * Replace mocha by tape to overwrite ava test
+  * Use pkg-js-tools auto test & install
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * Add upstream/metadata
+  * New upstream version 4.0.0
+  * Refresh patch
+  * Update copyright
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 10 Mar 2020 11:03:50 +0100
+
+node-yn (3.0.0-1) unstable; urgency=medium
+
+  * Bump standard version
+  * Fix nodejs binary
+  * Honor DEB_BUILD_OPTIONS
+  * New upstream version
+  * Update copyright
+
+ -- Paolo Greppi <paolo.greppi@libpf.com>  Wed, 09 Jan 2019 23:05:13 +0100
+
+node-yn (2.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #886843)
+
+ -- Paolo Greppi <paolo.greppi@libpf.com>  Fri, 06 Apr 2018 19:18:56 +0200

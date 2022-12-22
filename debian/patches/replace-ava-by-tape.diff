@@ -1,0 +1,71 @@
+Description: replace ava by tape
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2020-03-10
+
+--- a/test.js
++++ b/test.js
+@@ -1,5 +1,5 @@
+-import test from 'ava';
+-import yn from '.';
++const test = require('tape');
++const yn = require('.');
+ 
+ const truthyCases = [
+ 	'y',
+@@ -20,6 +20,7 @@
+ 		t.true(yn(case_));
+ 		t.true(yn(case_, {lenient: true}));
+ 	}
++	t.end();
+ });
+ 
+ const falseyCases = [
+@@ -41,6 +42,7 @@
+ 		t.false(yn(case_));
+ 		t.false(yn(case_, {lenient: true}));
+ 	}
++	t.end();
+ });
+ 
+ const undefinedCases = [
+@@ -73,6 +75,7 @@
+ 		t.is(yn(case_), undefined);
+ 		t.is(yn(case_, {lenient: true}), undefined);
+ 	}
++	t.end();
+ });
+ 
+ test('lenient option - truthy value cases', t => {
+@@ -81,26 +84,31 @@
+ 	t.true(yn('tes', {lenient: true}));
+ 	t.true(yn('twa', {lenient: true}));
+ 	t.true(yn('urd', {lenient: true}));
++	t.end();
+ });
+ 
+ test('lenient option - falsey value cases', t => {
+ 	t.false(yn('ni', {lenient: true}));
+ 	t.false(yn('bi', {lenient: true}));
+ 	t.false(yn('mo', {lenient: true}));
++	t.end();
+ });
+ 
+ test('default option throws error if not a boolean type', t => {
+ 	t.throws(() => {
+ 		yn('10', {default: 10});
+ 	}, 'Expected the `default` option to be of type `boolean`, got `number`');
++	t.end();
+ });
+ 
+ test('default option', t => {
+ 	t.true(yn('10', {default: true}));
+ 	t.false(yn('10', {default: false}));
++	t.end();
+ });
+ 
+ test('default option with lenient option', t => {
+ 	t.true(yn('10', {default: true, lenient: true}));
+ 	t.false(yn('10', {default: false, lenient: true}));
++	t.end();
+ });
